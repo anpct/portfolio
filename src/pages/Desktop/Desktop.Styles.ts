@@ -6,6 +6,10 @@ export const DesktopContainer = styled.div`
   background: ${(props) => props.theme.gradientBackground};
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
 `;
 
 export const DesktopIconContainer = styled.div`
@@ -15,7 +19,8 @@ export const DesktopIconContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 70px;
-  width: 70px;
+  width: 80px;
+  margin-bottom: 10px;
 
   &:hover {
     background-color: ${(props) => props.theme.hover};
@@ -24,7 +29,7 @@ export const DesktopIconContainer = styled.div`
 
 export const DesktopIconIconContainer = styled.div`
   height: 50px;
-  width: 70px;
+  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,8 +37,9 @@ export const DesktopIconIconContainer = styled.div`
 
 export const DesktopIconTextContainer = styled.div`
   height: 20px;
-  width: 70px;
+  width: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-transform: capitalize;
 `;

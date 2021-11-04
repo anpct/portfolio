@@ -3,6 +3,11 @@ import { ScreenModalThemes } from "./ScreenModal.Types";
 
 export const ScreenModalContainer = styled.div<ScreenModalThemes>`
   position: absolute;
+  background-color: ${(props) => props.theme.taskbar};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   ${(props) => {
     if (props.fullSize) {
@@ -14,8 +19,8 @@ export const ScreenModalContainer = styled.div<ScreenModalThemes>`
         `;
     } else {
       return `
-        height: 50%;
-        width: 50%;
+        height: 70%;
+        width: 70%;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
@@ -27,6 +32,9 @@ export const ScreenModalContainer = styled.div<ScreenModalThemes>`
 export const ModalController = styled.div`
   height: 40px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const ModalContent = styled.div`
@@ -45,4 +53,18 @@ export const IconContainer = styled.div`
   &:hover {
     background-color: ${(props) => props.theme.hover};
   }
+`;
+
+export const ModalDetails = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ModalName = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  margin-left: 10px;
 `;

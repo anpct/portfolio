@@ -8,6 +8,8 @@ import {
   IconContainer,
   ModalContent,
   ModalController,
+  ModalDetails,
+  ModalName,
   ScreenModalContainer,
 } from "./ScreenModal.Styles";
 import { ScreenModalProps } from "./ScreenModal.Types";
@@ -17,19 +19,24 @@ const ScreenModal: React.FC<ScreenModalProps> = (props: ScreenModalProps) => {
   const changeSreenSize = () => {
     setFullSize(!fullSize);
   };
-  const { closeModal, minimizeModal, children, screenName } = props;
+  const { closeModal, minimizeModal, children, screen } = props;
   return (
     <ScreenModalContainer fullSize={fullSize}>
       <ModalController>
-        <IconContainer onClick={() => minimizeModal(screenName)}>
-          <MinusIconSVG />
-        </IconContainer>
-        <IconContainer onClick={changeSreenSize}>
-          <ResizeIconSVG />
-        </IconContainer>
-        <IconContainer onClick={() => closeModal(screenName)}>
-          <CrossIconSVG />
-        </IconContainer>
+        <ModalDetails>
+          <ModalName>{screen.screenName}</ModalName>
+        </ModalDetails>
+        <ModalDetails>
+          <IconContainer onClick={() => minimizeModal(screen.screenName)}>
+            <MinusIconSVG />
+          </IconContainer>
+          <IconContainer onClick={changeSreenSize}>
+            <ResizeIconSVG />
+          </IconContainer>
+          <IconContainer onClick={() => closeModal(screen.screenName)}>
+            <CrossIconSVG />
+          </IconContainer>
+        </ModalDetails>
       </ModalController>
       <ModalContent>{children}</ModalContent>
     </ScreenModalContainer>

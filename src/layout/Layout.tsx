@@ -28,16 +28,22 @@ const Layout = () => {
   };
 
   const openModal = (screenName: string) => {
-    const currentObject = { ...screenData[screenName] };
-    currentObject["isOpened"] = true;
-    currentObject["isVisible"] = true;
-    setScreenData({ ...screenData, [screenName]: currentObject });
+    const dataCopy = { ...screenData };
+    Object.values(screenData).forEach((screen: ConstructedObject) => {
+      dataCopy[screen.screenName]["isVisible"] = false;
+    });
+    dataCopy[screenName]["isOpened"] = true;
+    dataCopy[screenName]["isVisible"] = true;
+    setScreenData({ ...dataCopy });
   };
 
   const maximizeModal = (screenName: string) => {
-    const currentObject = { ...screenData[screenName] };
-    currentObject["isVisible"] = true;
-    setScreenData({ ...screenData, [screenName]: currentObject });
+    const dataCopy = { ...screenData };
+    Object.values(screenData).forEach((screen: ConstructedObject) => {
+      dataCopy[screen.screenName]["isVisible"] = false;
+    });
+    dataCopy[screenName]["isVisible"] = true;
+    setScreenData({ ...dataCopy });
   };
 
   return (
@@ -50,7 +56,7 @@ const Layout = () => {
               <ScreenModal
                 closeModal={closeModal}
                 minimizeModal={minimizeModal}
-                screenName={screen.screenName}>
+                screen={screen}>
                 {screen.component}
               </ScreenModal>
             )}
@@ -58,7 +64,12 @@ const Layout = () => {
         ))}
       </ScreenContainer>
       <ControllerContainer>
-        <Taskbar maximizeModal={maximizeModal} minimizeModal={minimizeModal} />
+        <Taskbar
+          maximizeModal={maximizeModal}
+          minimizeModal={minimizeModal}
+          screenData={screenData}
+          openModal={openModal}
+        />
       </ControllerContainer>
     </BaseContainer>
   );

@@ -20,8 +20,8 @@ const screenDetails: ConstructedObject = {
   info: {
     screenName: "info",
     component: <Info />,
-    isOpened: false,
-    isVisible: false,
+    isOpened: true,
+    isVisible: true,
     icon: <InfoIconSVG />,
   },
   about: {

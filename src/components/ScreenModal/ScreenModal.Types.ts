@@ -8,5 +8,5 @@ export interface ScreenModalProps {
   closeModal: (screenName: string) => void;
   minimizeModal: (screenName: string) => void;
   children: ReactElement;
-  screenName: string;
+  screen: ConstructedObject;
 }
