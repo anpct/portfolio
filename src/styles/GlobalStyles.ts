@@ -19,6 +19,7 @@ body,
   height: 100%;
   width: 100%;
   font-weight: lighter;
+  overflow: hidden;
 }
 a {
   color: inherit;
@@ -50,6 +51,7 @@ a {
 		background-position: 0% 50%;
 	}
 }
+path { fill: ${(props) => props.theme.primaryText}; }
 `;
 
 export default GlobalStyles;

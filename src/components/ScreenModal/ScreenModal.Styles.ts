@@ -3,7 +3,7 @@ import { ScreenModalThemes } from "./ScreenModal.Types";
 
 export const ScreenModalContainer = styled.div<ScreenModalThemes>`
   position: absolute;
-  background-color: ${(props) => props.theme.taskbar};
+  background-color: ${(props) => props.theme.background};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,9 +21,8 @@ export const ScreenModalContainer = styled.div<ScreenModalThemes>`
       return `
         height: 70%;
         width: 70%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        top: 0;
+        left: 0;
         `;
     }
   }}

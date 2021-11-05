@@ -4,9 +4,11 @@ import theme from "../styles/Theme";
 import GlobalStyles from "../styles/GlobalStyles";
 import Layout from "../layout/Layout";
 
+const { lightTheme, darkTheme } = theme;
+
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyles />
       <Layout />
     </ThemeProvider>

@@ -36,7 +36,7 @@ const config: Configuration = {
           {
             loader: "file-loader",
             options: {
-              outputPath: "/images/",
+              outputPath: "images",
             },
           },
         ],

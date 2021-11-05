@@ -35,7 +35,7 @@ const config: webpack.Configuration = {
           {
             loader: "file-loader",
             options: {
-              outputPath: "/images/",
+              outputPath: "images",
             },
           },
         ],
