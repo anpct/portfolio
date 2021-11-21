@@ -7,4 +7,5 @@ export interface TaskbarProps {
 
 export interface TaskbarThemes {
   selected?: boolean;
+  isTransparent?: boolean;
 }

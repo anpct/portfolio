@@ -9,6 +9,7 @@ export const TaskbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  z-index: 999999999;
 `;
 
 export const IconContainer = styled.div<TaskbarThemes>`
@@ -18,6 +19,8 @@ export const IconContainer = styled.div<TaskbarThemes>`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  margin-right: 2px;
 
   ${(props) => {
     if (props.selected) {
@@ -30,14 +33,21 @@ export const IconContainer = styled.div<TaskbarThemes>`
   }
 `;
 
-export const TaskbarModal = styled.div`
+export const TaskbarModal = styled.div<TaskbarThemes>`
   position: absolute;
   left: 0;
   background-color: ${(props) => props.theme.taskbar};
-  height: 90vh;
+  height: 80vh;
   bottom: 50px;
   display: flex;
   width: auto;
+  opacity: ${(props) => (props.isTransparent ? "0.5" : "1")};
+  animation: bottomToTop;
+  animation-duration: 0.5s;
+  border-top-right-radius: 10px;
+  z-index: 999999999;
+  border-top: thin solid ${(props) => props.theme.primaryText};
+  border-right: thin solid ${(props) => props.theme.primaryText};
 `;
 
 export const TaskbarControl = styled.div`
@@ -60,7 +70,9 @@ export const TaskbarListItem = styled.div`
   align-items: center;
   justify-content: flex-start;
   width: 250px;
-
+  transition: all ease-in 200ms;
+  transform-style: preserve-3d;
+  border-radius: 10px;
   &:hover {
     background-color: ${(props) => props.theme.hover};
   }
@@ -80,7 +92,9 @@ export const TimeContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin-right: 10px;
+  font-size: 13px;
 `;
 
 export const EnabledIconsContainer = styled.div`

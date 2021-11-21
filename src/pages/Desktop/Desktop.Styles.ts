@@ -21,6 +21,7 @@ export const DesktopIconContainer = styled.div`
   height: 70px;
   width: 80px;
   margin-bottom: 10px;
+  border-radius: 10px;
 
   &:hover {
     background-color: ${(props) => props.theme.hover};

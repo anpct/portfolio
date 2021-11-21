@@ -1,15 +1,21 @@
 import React from "react";
+import data from "./About.Data";
 import {
   AboutContainer,
-  AboutImageContainer,
-  AboutListContainer,
+  AboutHeader,
+  StickieCard,
+  StickieContainer,
 } from "./About.Styles";
 
 const About = () => {
   return (
     <AboutContainer>
-      <AboutImageContainer></AboutImageContainer>
-      <AboutListContainer></AboutListContainer>
+      <AboutHeader>{"Let's get to know a bit about me"}</AboutHeader>
+      <StickieContainer>
+        {data.map((sticke) => (
+          <StickieCard key={sticke.key}>{sticke.value}</StickieCard>
+        ))}
+      </StickieContainer>
     </AboutContainer>
   );
 };

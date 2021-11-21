@@ -3,8 +3,18 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 ${normalize}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+
+
 * {
   box-sizing: border-box;
+
 }
 html,
 body,
@@ -27,8 +37,8 @@ a {
   font-weight: lighter;
 }
 ::-webkit-scrollbar {
-  width: 2px;
-  height: 2px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: ${(props) => props.theme.background}; 
@@ -52,6 +62,33 @@ a {
 	}
 }
 path { fill: ${(props) => props.theme.primaryText}; }
+@keyframes bottomToTop{
+  0%{
+    height: 0vh;
+    opacity: 0;
+  }
+  100%{
+    height: 80vh;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
 `;
 
 export default GlobalStyles;

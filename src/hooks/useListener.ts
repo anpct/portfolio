@@ -1,11 +1,15 @@
 import { useEffect, useRef } from "react";
 
 const useListener = (outsideFunction: () => void) => {
-  const ref = useRef<null | any>();
+  const childRef = useRef<null | any>();
+  const parentRef = useRef<null | any>();
 
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
-      if (ref.current && ref.current.contains(event.target)) {
+      if (
+        (childRef.current && childRef.current.contains(event.target)) ||
+        (parentRef.current && parentRef.current.contains(event.target))
+      ) {
         return;
       }
       outsideFunction();
@@ -17,7 +21,7 @@ const useListener = (outsideFunction: () => void) => {
     };
   }, [outsideFunction]);
 
-  return ref;
+  return { childRef, parentRef };
 };
 
 export default useListener;

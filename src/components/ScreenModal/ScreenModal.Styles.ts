@@ -8,7 +8,12 @@ export const ScreenModalContainer = styled.div<ScreenModalThemes>`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  opacity: ${(props) => (props.isTransparent ? "0.5" : "1")};
+  border-radius: ${(props) => (props.fullSize ? "0" : "10px")};
+  animation: fadeIn;
+  animation-duration: 0.5s;
+  z-index: ${(props) => props.zIndex};
+  border: thin solid ${(props) => props.theme.primaryText};
   ${(props) => {
     if (props.fullSize) {
       return `
@@ -25,7 +30,7 @@ export const ScreenModalContainer = styled.div<ScreenModalThemes>`
         left: 0;
         `;
     }
-  }}
+  }};
 `;
 
 export const ModalController = styled.div`
@@ -39,6 +44,7 @@ export const ModalController = styled.div`
 export const ModalContent = styled.div`
   height: calc(100% - 40px);
   width: 100%;
+  overflow: auto;
 `;
 
 export const IconContainer = styled.div`

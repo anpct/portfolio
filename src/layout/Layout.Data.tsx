@@ -4,7 +4,7 @@ import Contact from "../pages/Contact/Contact";
 import Experience from "../pages/Experience/Experience";
 import Info from "../pages/Info/Info";
 import Projects from "../pages/Projects/Projects";
-import Settings from "../pages/Settings/Settings";
+//import Settings from "../pages/Settings/Settings";
 import Skills from "../pages/Skills/Skills";
 import {
   AboutIconSVG,
@@ -12,7 +12,7 @@ import {
   ExperienceIconSVG,
   InfoIconSVG,
   ProjectsIconSVG,
-  SettingsIconSVG,
+  // SettingsIconSVG,
   SkillsIconSVG,
 } from "../resources/svgs/svgs";
 
@@ -23,6 +23,7 @@ const screenDetails: ConstructedObject = {
     isOpened: true,
     isVisible: true,
     icon: <InfoIconSVG />,
+    zIndex: 1,
   },
   about: {
     screenName: "about",
@@ -30,6 +31,7 @@ const screenDetails: ConstructedObject = {
     isOpened: false,
     isVisible: false,
     icon: <AboutIconSVG />,
+    zIndex: 1,
   },
   contact: {
     screenName: "contact",
@@ -37,6 +39,7 @@ const screenDetails: ConstructedObject = {
     isOpened: false,
     isVisible: false,
     icon: <ContactIconSVG />,
+    zIndex: 1,
   },
   experience: {
     screenName: "experience",
@@ -44,6 +47,7 @@ const screenDetails: ConstructedObject = {
     isOpened: false,
     isVisible: false,
     icon: <ExperienceIconSVG />,
+    zIndex: 1,
   },
   projects: {
     screenName: "projects",
@@ -51,20 +55,22 @@ const screenDetails: ConstructedObject = {
     isOpened: false,
     isVisible: false,
     icon: <ProjectsIconSVG />,
+    zIndex: 1,
   },
-  settings: {
-    screenName: "settings",
-    component: <Settings />,
-    isOpened: false,
-    isVisible: false,
-    icon: <SettingsIconSVG />,
-  },
+  // settings: {
+  //   screenName: "settings",
+  //   component: <Settings />,
+  //   isOpened: false,
+  //   isVisible: false,
+  //   icon: <SettingsIconSVG />,
+  // },
   skills: {
     screenName: "skills",
     component: <Skills />,
     isOpened: false,
     isVisible: false,
     icon: <SkillsIconSVG />,
+    zIndex: 1,
   },
 };
 
