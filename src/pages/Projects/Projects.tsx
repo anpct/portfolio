@@ -17,6 +17,7 @@ import {
   HerokuSVG,
   HTMLSVG,
   JSSVG,
+  NextJSSVG,
   PythonSVG,
   ReactNativeSVG,
   ReactSVG,
@@ -39,6 +40,8 @@ const getSVG = (techName: string) => {
     return <HTMLSVG height={25} width={25} />;
   } else if (techName === "js") {
     return <JSSVG height={25} width={25} />;
+  } else if (techName === "next") {
+    return <NextJSSVG height={25} width={25} />;
   }
   return <></>;
 };
@@ -58,12 +61,15 @@ const Projects = () => {
               {project.description}
             </ProjectCardDescription>
             <ProjectCardActions>
-              <div
-                onClick={() => {
-                  window?.open(project?.github, "_blank")?.focus();
-                }}>
-                View Code
-              </div>
+              {project?.github && (
+                <div
+                  onClick={() => {
+                    window?.open(project?.github, "_blank")?.focus();
+                  }}>
+                  View Code
+                </div>
+              )}
+
               {project?.website && (
                 <div
                   onClick={() => {
@@ -71,6 +77,19 @@ const Projects = () => {
                   }}>
                   View Live
                 </div>
+              )}
+              {project?.wList && (
+                <>
+                  {project?.wList.map((w) => (
+                    <div
+                      onClick={() => {
+                        window?.open(w?.link, "_blank")?.focus();
+                      }}
+                      key={w?.name}>
+                      {w?.name}
+                    </div>
+                  ))}
+                </>
               )}
             </ProjectCardActions>
             <ProjectCardTech>

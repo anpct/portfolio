@@ -6,7 +6,7 @@ const Info = () => {
     <InfoContainer>
       <InfoHeader>What am I seeing here?</InfoHeader>
       <InfoCardContainer>
-        <div>Hi I am Anoop Thiparala and I am a full stach developer</div>
+        <div>Hi I am Anoop Thiparala and I am a full stack developer</div>
         <div>
           I have built this application to showcase the power of ReactJS, this
           application is built purely with React.

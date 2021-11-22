@@ -28,6 +28,14 @@ const data = [
   },
   {
     key: 4,
+    name: "Alumni Connect | JGSchool",
+    technologies: ["heroku", "react", "html", "css", "js", "django"],
+    description: "A portal for the alumni of Johnson Grammar school",
+    github: "",
+    website: "https://alumniconnect.jgschool.org",
+  },
+  {
+    key: 5,
     name: "Average Coder",
     technologies: ["heroku", "react", "html", "css", "js"],
     description: "Simple tutorial app using the django framework and ReactJS",
@@ -35,7 +43,21 @@ const data = [
     website: "",
   },
   {
-    key: 5,
+    key: 6,
+    name: "Client websites",
+    technologies: ["next", "html", "css", "js"],
+    description:
+      "These are a list of website I have built for my clients using NextJS",
+    github: "",
+    website: "",
+    wList: [
+      { name: "Conntog Tech", link: "https://conntog.tech" },
+      { name: "Global Eduvisors", link: "https://globaleduvisors.com" },
+      { name: "Arrot Z", link: "https://aquapumpengineer.com" },
+    ],
+  },
+  {
+    key: 7,
     name: "Hospital Management System",
     technologies: ["react", "html", "css", "js", "python"],
     description: "A hospital management system made with flask and react",
@@ -43,7 +65,7 @@ const data = [
     website: "",
   },
   {
-    key: 6,
+    key: 8,
     name: "MRIET Feedback",
     technologies: ["html", "css", "js", "python"],
     description: "Feedback system for MRIET college using flask",

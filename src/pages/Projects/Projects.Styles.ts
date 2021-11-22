@@ -79,9 +79,10 @@ export const ProjectCardActions = styled.div`
     border: thin solid #33325c;
     border-radius: 10px;
     padding: 10px;
-    margin-right: 10px;
+    margin: 0 10px;
     cursor: pointer;
     transition: all ease-in 200ms;
+    flex-wrap: wrap;
   }
 
   div:hover {
