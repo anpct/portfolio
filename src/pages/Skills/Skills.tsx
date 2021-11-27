@@ -15,7 +15,7 @@ const Skills = () => {
     <SkillContainer>
       <SkillHeader>I do all kinds of neat stuff</SkillHeader>
       <SkillBody>
-        I am an experienced full stach developer with specialized knowledge in
+        I am an experienced full stack developer with specialized knowledge in
         all stages of the software development lifecycle
       </SkillBody>
       <SkillCardContainer>
